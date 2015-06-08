@@ -1,6 +1,7 @@
 package de.twoid.myappportfolio.portfolio.viewholder;
 
 import android.support.annotation.StringRes;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,7 +32,7 @@ public class AppItemViewHolder extends PortfolioViewHolder<AppItem> {
             tvTitle.setText(item.getAppNameResId());
             applyClickListener(item.getAppNameResId());
             btnLaunch.setEnabled(true);
-            btnLaunch.setSupportBackgroundTintList(item.getButtonBackgroundColors());
+            ViewCompat.setBackgroundTintList(btnLaunch, item.getButtonBackgroundColors());
         }else{
             tvTitle.setText("?");
             btnLaunch.setOnClickListener(null);
