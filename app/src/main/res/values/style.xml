@@ -2,6 +2,12 @@
 <resources>
     <style name="Theme.Twoid.Button" parent="Base.Widget.AppCompat.Button">
         <item name="android:textColor">@color/primary_text_default_material_dark</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+    </style>
+
+    <style name="Theme.Twoid.Button.Borderless" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/branding</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
     </style>
 
 </resources>

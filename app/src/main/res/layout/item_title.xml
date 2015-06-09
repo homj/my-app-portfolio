@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tv_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/title_item_height"
-    android:padding="@dimen/item_padding"
+    android:minHeight="@dimen/title_item_min_height"
+    android:padding="@dimen/title_item_padding"
     android:gravity="center"
-    android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    tools:text="@string/portfolio_title"/>

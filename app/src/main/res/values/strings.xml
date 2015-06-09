@@ -5,11 +5,21 @@
 
     <string name="app_spotify_streamer">Spotify Streamer</string>
     <string name="app_football_scores">Scores App</string>
-    <string name="app_library">Library App</string>
+    <string name="app_library">Alexandria</string>
     <string name="app_build_it_bigger">Build It Bigger</string>
     <string name="app_xyz_reader">XYZ Reader</string>
     <string name="app_captstone">Capstone: My Own App</string>
+
+    <string name="app_description_spotify_streamer">A music streaming application to replicate one of the most popular app experiences in the world. This app allows you to search for an artist on Spotify, and lets you play a sample of the artist\'s top tracks.</string>
+    <string name="app_description_football_scores">An app that tracks current and future football matches.</string>
+    <string name="app_description_library">A book list and barcode scanner app.</string>
+    <string name="app_description_build_it_bigger">Life\'s a joke!</string>
+    <string name="app_description_xyz_reader">A mock RSS feed reader about all things bacon. Now in Material Design.</string>
+    <string name="app_description_captstone">I\'d love to know how you pronounce \"Capstone\"!</string>
     <string name="launch_toast_message">This button will launch %1$s!</string>
     <string name="launch">launch</string>
-    <string name="portfolio_title">My Nanodegree Apps!</string>
+    <string name="portfolio_title">My Nanodegree Apps</string>
+    <string name="action_open_github">Open Github</string>
+    <string name="github_url">https://github.com/homj</string>
+    <string name="hero_image_url">http://lh3.googleusercontent.com/l6sQx2UtDyXqYeSp8UjeDjywt3lSoxbZaUBfz8B6f-vT4JOR5r60w2c7Ta6eeGONAWEs34ZZZj2ejQ5K5eE=s0</string>
 </resources>

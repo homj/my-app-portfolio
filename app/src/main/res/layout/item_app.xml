@@ -1,29 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v7.widget.CardView
+    android:id="@+id/card"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/app_item_height"
-    android:paddingLeft="@dimen/item_padding"
-    android:paddingRight="@dimen/item_padding"
-    android:paddingTop="@dimen/app_item_padding_vertical"
-    android:paddingBottom="@dimen/app_item_padding_vertical"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="@dimen/app_item_card_elevation"
+    app:cardMaxElevation="@dimen/app_item_card_max_elevation"
+    app:cardCornerRadius="@dimen/app_item_card_corner_radius"
+    android:layout_marginTop="@dimen/app_item_margin_vertical"
+    android:layout_marginBottom="@dimen/app_item_margin_vertical">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:text="title"/>
+        android:minHeight="@dimen/app_item_min_height"
+        android:paddingTop="@dimen/app_item_padding_top"
+        android:paddingLeft="@dimen/app_item_padding_horizontal">
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_launch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        style="@style/Theme.Twoid.Button"
-        android:text="@string/launch"/>
-</LinearLayout>
+        <ImageView
+            android:id="@+id/iv_app_logo"
+            android:layout_width="@dimen/app_item_logo_size"
+            android:layout_height="@dimen/app_item_logo_size"
+            android:layout_marginRight="@dimen/default_spacing_x2"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/app_item_padding_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/iv_app_logo"
+            android:layout_weight="1"
+            tools:text="title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/app_item_padding_horizontal"
+            android:layout_marginBottom="@dimen/app_item_text_margin_bottom"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/iv_app_logo"
+            android:layout_below="@id/tv_title"
+            android:layout_weight="1"
+            tools:text="title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/secondary_text_default_material_light"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_launch"
+            style="@style/Theme.Twoid.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_description"
+            android:text="@string/launch"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

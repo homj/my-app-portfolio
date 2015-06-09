@@ -1,9 +1,28 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="app_item_height">56dp</dimen>
-    <dimen name="title_item_height">96dp</dimen>
-    <dimen name="item_padding">16dp</dimen>
-    <dimen name="app_item_padding_vertical">4dp</dimen>
+    <dimen name="block_size">56dp</dimen>
+    <dimen name="block_size_x4">224dp</dimen>
+    <dimen name="default_spacing">8dp</dimen>
+    <dimen name="default_spacing_x2">16dp</dimen>
+    <dimen name="default_spacing_x3">24dp</dimen>
+    <dimen name="max_content_width">640dp</dimen>
+
+
+    <dimen name="app_item_min_height">88dp</dimen>
+    <dimen name="app_item_margin_vertical">@dimen/default_spacing</dimen>
+    <dimen name="app_item_padding_horizontal">@dimen/default_spacing_x2</dimen>
+    <dimen name="app_item_padding_top">@dimen/default_spacing_x2</dimen>
+    <dimen name="app_item_text_margin_bottom">@dimen/default_spacing_x2</dimen>
+    <dimen name="app_item_card_corner_radius">0dp</dimen>
+    <dimen name="app_item_card_elevation">2dp</dimen>
+    <dimen name="app_item_card_max_elevation">8dp</dimen>
+    <dimen name="app_item_logo_size">72dp</dimen>
+
+    <dimen name="title_item_min_height">96dp</dimen>
+    <dimen name="title_item_padding">@dimen/default_spacing_x2</dimen>
+
+    <dimen name="collapsing_toolbar_height">@dimen/block_size_x4</dimen>
+    <dimen name="button_margin">8dp</dimen>
+
+    <dimen name="expanded_title_margin_horizontal">@dimen/default_spacing_x2</dimen>
+    <dimen name="expanded_title_margin_bottom">@dimen/default_spacing_x3</dimen>
 </resources>
