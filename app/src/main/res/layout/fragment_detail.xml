@@ -1,0 +1,66 @@
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="de.twoid.myappportfolio.detail.DetailFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            android:background="@android:color/white"
+            app:expandedTitleMarginBottom="@dimen/default_spacing_x2"
+            app:expandedTitleMarginEnd="@dimen/horizontal_content_margin_with_inset"
+            app:expandedTitleMarginStart="@dimen/horizontal_content_margin_with_inset"
+            app:expandedTitleTextAppearance="@style/TextAppearance.Title.Detail.Expanded"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/horizontal_content_margin_with_inset"
+                    android:layout_marginTop="@dimen/hero_icon_vertical_margin"
+                    android:layout_marginRight="@dimen/horizontal_content_margin_with_inset"
+                    android:layout_marginBottom="@dimen/hero_icon_vertical_margin"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerInside"
+                    tools:src="@drawable/ic_spotify"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                tools:title="@string/app_spotify_streamer"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/horizontal_content_margin"
+        android:paddingTop="@dimen/default_spacing"
+        android:paddingRight="@dimen/horizontal_content_margin"
+        android:paddingBottom="@dimen/default_spacing"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivityFragment"/>
+</android.support.design.widget.CoordinatorLayout>

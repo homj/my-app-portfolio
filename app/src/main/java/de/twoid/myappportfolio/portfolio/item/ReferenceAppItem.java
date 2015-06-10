@@ -12,7 +12,6 @@ import android.support.annotation.StringRes;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -61,23 +60,23 @@ public class ReferenceAppItem extends AppItem {
             textView.setText(appInfo.description);
         }
     }
+//
+//    @Override
+//    public void applyLogo(ImageView imageView){
+//        if(imageView == null){
+//            return;
+//        }
+//
+//        ensureAppInfo(imageView.getContext());
+//
+//        if(appInfo == null || appInfo.logo == null){
+//            super.applyLogo(imageView);
+//        }else{
+//            imageView.setImageDrawable(appInfo.logo);
+//        }
+//    }
 
-    @Override
-    public void applyLogo(ImageView imageView){
-        if(imageView == null){
-            return;
-        }
-
-        ensureAppInfo(imageView.getContext());
-
-        if(appInfo == null || appInfo.logo == null){
-            super.applyLogo(imageView);
-        }else{
-            imageView.setImageDrawable(appInfo.logo);
-        }
-    }
-
-    public void applyClickListener(Button button){
+    public void applyButtonClickListener(Button button){
         if(button == null){
             return;
         }
@@ -85,7 +84,7 @@ public class ReferenceAppItem extends AppItem {
         ensureAppInfo(button.getContext());
 
         if(appInfo == null || appInfo.launchIntent == null){
-            super.applyClickListener(button);
+            super.applyButtonClickListener(button);
         }
 
         button.setOnClickListener(new OnClickListener() {
@@ -98,7 +97,7 @@ public class ReferenceAppItem extends AppItem {
     }
 
     @Override
-    protected String getAppName(@NonNull Context context){
+    public String getAppName(@NonNull Context context){
         ensureAppInfo(context);
         return (appInfo == null || appInfo.name == null) ? null : appInfo.name.toString();
     }

@@ -22,4 +22,6 @@
     <string name="action_open_github">Open Github</string>
     <string name="github_url">https://github.com/homj</string>
     <string name="hero_image_url">http://lh3.googleusercontent.com/l6sQx2UtDyXqYeSp8UjeDjywt3lSoxbZaUBfz8B6f-vT4JOR5r60w2c7Ta6eeGONAWEs34ZZZj2ejQ5K5eE=s0</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
 </resources>

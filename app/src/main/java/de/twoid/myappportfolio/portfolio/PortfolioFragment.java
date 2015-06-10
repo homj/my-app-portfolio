@@ -19,6 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.twoid.myappportfolio.Projects;
 import de.twoid.myappportfolio.R;
 import de.twoid.myappportfolio.portfolio.item.Item;
 import de.twoid.myappportfolio.portfolio.item.AppItem;
@@ -48,18 +49,7 @@ public class PortfolioFragment extends Fragment {
     }
 
     private void setupResources(){
-        int defaultButtonColor = getResources().getColor(R.color.branding);
-
-        List<Item> itemList = new ArrayList<>();
-//        itemList.add(new TitleItem(R.string.portfolio_title));
-        itemList.add(new ReferenceAppItem("de.twoid.spotifystreamer", R.string.app_spotify_streamer, R.string.app_description_spotify_streamer));
-        itemList.add(new AppItem(R.string.app_football_scores, R.string.app_description_football_scores));
-        itemList.add(new AppItem(R.string.app_library, R.string.app_description_library));
-        itemList.add(new AppItem(R.string.app_build_it_bigger, R.string.app_description_build_it_bigger));
-        itemList.add(new AppItem(R.string.app_xyz_reader, R.string.app_description_xyz_reader));
-        itemList.add(new AppItem(R.string.app_captstone, R.string.app_description_captstone, getResources().getColor(R.color.accent)));
-
-        adapter = new PortfolioAdapter(itemList);
+        adapter = new PortfolioAdapter(Projects.list());
     }
 
     private void initViews(View root){
@@ -71,7 +61,7 @@ public class PortfolioFragment extends Fragment {
     private void setupViews(){
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new InsetItemDecoration(getResources().getDimensionPixelSize(R.dimen.max_content_width)));
+//        recyclerView.addItemDecoration(new InsetItemDecoration(getResources().getDimensionPixelSize(R.dimen.max_content_width)));
         collapsingToolbarLayout.setTitle(getResources().getString(R.string.portfolio_title));
 
         ivImage.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="CardView.AppItem.Elevating" parent="CardView.AppItem">
+        <item name="android:stateListAnimator">@anim/card_statelist_anim</item>
+    </style>
+</resources>

@@ -10,4 +10,27 @@
         <item name="android:layout_margin">@dimen/button_margin</item>
     </style>
 
+    <style name="CardView.AppItem">
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardCornerRadius">@dimen/app_item_card_corner_radius</item>
+        <item name="cardElevation">@dimen/app_item_card_elevation</item>
+        <item name="cardMaxElevation">@dimen/app_item_card_max_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="android:layout_marginTop">@dimen/app_item_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/app_item_margin_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardView.AppItem.Elevating" parent="CardView.AppItem">
+    </style>
+
+    <style name="TextAppearance.Title" parent="TextAppearance.AppCompat.Headline">
+
+    </style>
+
+    <style name="TextAppearance.Title.Detail.Expanded" parent="TextAppearance.Title">
+        <item name="android:textColor">@color/primary_text_default_material_light</item>
+    </style>
 </resources>

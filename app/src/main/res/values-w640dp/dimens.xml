@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="block_size">64dp</dimen>
+    <dimen name="block_size_x4">256dp</dimen>
+    <dimen name="default_spacing">12dp</dimen>
+    <dimen name="default_spacing_x2">24dp</dimen>
+    <dimen name="default_spacing_x3">36dp</dimen>
+    <dimen name="expanded_title_margin_horizontal">@dimen/block_size</dimen>
+
+    <dimen name="hero_icon_vertical_margin">88dp</dimen>
     <dimen name="app_item_card_corner_radius">2dp</dimen>
+    <dimen name="content_width">@dimen/max_content_width</dimen>
 </resources>

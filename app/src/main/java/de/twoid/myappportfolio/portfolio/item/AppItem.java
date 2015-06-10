@@ -2,39 +2,47 @@ package de.twoid.myappportfolio.portfolio.item;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import de.twoid.myappportfolio.ColorUtils;
+import de.twoid.myappportfolio.Projects;
 import de.twoid.myappportfolio.R;
+import de.twoid.myappportfolio.detail.DetailActivity;
+import de.twoid.myappportfolio.portfolio.viewholder.AppItemViewHolder;
+import de.twoid.myappportfolio.portfolio.viewholder.ItemViewHolder;
 
 /**
  * Created by Johannes on 31.05.2015.
  */
 public class AppItem extends Item{
+    private static ViewType VIEWTYPE = new ViewType() {
+        @Override
+        public ItemViewHolder createViewHolder(ViewGroup parent){
+            return new AppItemViewHolder(parent);
+        }
+    };
+
     @StringRes
     private int appNameResId;
     @StringRes
     private int appDescriptionResId;
-    @ColorInt
-    private int backgroundColor;
+    @DrawableRes
+    private int appLogoResId;
+    @ColorRes
+    private int backgroundColorResId;
     private boolean hasDescription = false;
+    private boolean hasLogo = false;
     private boolean hasBackgroundColor = false;
 
 
@@ -48,12 +56,18 @@ public class AppItem extends Item{
         hasDescription = true;
     }
 
-    public AppItem(@StringRes int appNameResId, @StringRes int appDescriptionResId, @ColorInt int backgroundColor){
+    public AppItem(@StringRes int appNameResId, @StringRes int appDescriptionResId, @ColorRes int backgroundColorResId){
         this.appNameResId = appNameResId;
         this.appDescriptionResId = appDescriptionResId;
-        this.backgroundColor = ColorUtils.mixRGB(0xFFFFFFFF, backgroundColor, 0.9f);
+        this.backgroundColorResId = backgroundColorResId;
         hasDescription = true;
         hasBackgroundColor = true;
+    }
+
+    public AppItem setAppLogo(@DrawableRes int appLogoResId){
+        this.appLogoResId = appLogoResId;
+        hasLogo = true;
+        return this;
     }
 
     public void applyLogo(ImageView imageView){
@@ -61,7 +75,7 @@ public class AppItem extends Item{
             return;
         }
 
-        imageView.setImageResource(R.mipmap.ic_launcher);
+        imageView.setImageResource(hasLogo ? appLogoResId : R.mipmap.ic_placeholder);
     }
 
     public void applyName(TextView textView){
@@ -77,14 +91,14 @@ public class AppItem extends Item{
     }
 
     public void applyBackgroundColor(CardView cardView){
-        if(cardView == null || !hasBackgroundColor){
+        if(cardView == null){
             return;
         }
 
-        cardView.setCardBackgroundColor(backgroundColor);
+        cardView.setCardBackgroundColor(hasBackgroundColor ? cardView.getResources().getColor(backgroundColorResId) : 0xFFFFFFFF);
     }
 
-    public void applyClickListener(Button button){
+    public void applyButtonClickListener(Button button){
         if(button == null){
             return;
         }
@@ -108,7 +122,32 @@ public class AppItem extends Item{
         button.setEnabled(true);
     }
 
-    protected String getAppName(@NonNull Context context){
+    public void applyClickListener(View view){
+        if(view == null){
+            return;
+        }
+
+        view.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                intent.putExtra(DetailActivity.EXTRA_PORJECT_ID, Projects.indexOf(AppItem.this));
+                v.getContext().startActivity(intent);
+            }
+        });
+        view.setEnabled(true);
+    }
+
+    public int getAppLogoResId(){
+        return appLogoResId;
+    }
+
+    public String getAppName(@NonNull Context context){
         return context.getString(appNameResId);
+    }
+
+    @Override
+    public ViewType getViewType(){
+        return VIEWTYPE;
     }
 }

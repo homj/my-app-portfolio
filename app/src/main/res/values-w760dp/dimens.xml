@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="horizontal_content_margin">60dp</dimen>
+    <dimen name="horizontal_content_margin_with_inset">84dp</dimen>
+</resources>

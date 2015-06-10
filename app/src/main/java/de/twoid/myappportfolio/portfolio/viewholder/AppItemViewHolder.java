@@ -12,7 +12,7 @@ import de.twoid.myappportfolio.portfolio.item.AppItem;
 /**
  * Created by Johannes on 31.05.2015.
  */
-public class AppItemViewHolder extends PortfolioViewHolder<AppItem> {
+public class AppItemViewHolder extends ItemViewHolder<AppItem> {
 
     private CardView card;
     private ImageView ivLogo;
@@ -36,11 +36,25 @@ public class AppItemViewHolder extends PortfolioViewHolder<AppItem> {
             item.applyLogo(ivLogo);
             item.applyName(tvTitle);
             item.applyDescription(tvDescription);
-            item.applyClickListener(btnLaunch);
+            item.applyButtonClickListener(btnLaunch);
+            item.applyClickListener(card);
         }else{
-            tvTitle.setText("?");
-            btnLaunch.setOnClickListener(null);
-            btnLaunch.setEnabled(false);
+            if(ivLogo != null){
+                ivLogo.setImageResource(R.mipmap.ic_placeholder);
+            }
+
+            if(tvTitle != null){
+                tvTitle.setText(null);
+            }
+
+            if(tvDescription != null){
+                tvDescription.setText(null);
+            }
+
+            if(btnLaunch != null){
+                btnLaunch.setOnClickListener(null);
+                btnLaunch.setEnabled(false);
+            }
         }
     }
 }
